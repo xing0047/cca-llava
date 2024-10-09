@@ -59,6 +59,40 @@ bash scripts/v1_5/eval/eval.cca-llava-1.5-7b.chair.sh
 ```
 ## AMBER
 
+We follow [AMBER](https://github.com/junyangwang0410/AMBER) to set up our AMBER evaluation. Additional packages need to be installed:
+```
+pip install nltk
+python -m nltk.downloader all
+
+pip install spacy
+python -m spacy download en_core_web_lg
+```
+Note that if any warning or error related to Numpy version shows up, please swicth numpy to 1.x to avoid the compatibility issue. 
+```
+pip uninstall numpy
+pip install numpy==1.26.4
+```
+
+Download AMBER data and questions and organise in the following structure:
+```
+playground/
+└── data
+    └── amber
+        ├── annotations.json
+        ├── relation.json
+        ├── metrics.txt
+        ├── safe_words.txt
+        ├── query
+        │   ├── query_generative.json
+        │   └── query_discriminative.json
+        └── image
+```
+# run evaluation for baseline llava model (include both amber generative and amber discriminative)
+bash scripts/v1_5/eval/eval.cca-llava-1.5-7b.amber.sh
+
+# run evaluation for baseline cca-llava model (include both amber generative and amber discriminative)
+bash scripts/v1_5/eval/eval.llava-1.5-7b.amber.sh
+
 ## Multiple-Choice Benchmarks
 For multiple-choice benchmarks, we use [lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval) to do evaluations. You can simply run scripts below, by replacing `data` with `seed`, `vizwiz_vqa`, `scienceqa_img`, `mmstar` or `gqa`.
 ```
