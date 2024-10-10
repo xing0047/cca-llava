@@ -94,7 +94,11 @@ bash scripts/v1_5/eval/eval.llava-1.5-7b.amber.sh
 ```
 
 ## Multiple-Choice Benchmarks
-For multiple-choice benchmarks, we use [lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval) to do evaluations. You can simply run scripts below, by replacing `data` with `seed`, `vizwiz_vqa`, `scienceqa_img`, `mmstar` or `gqa`.
+For multiple-choice benchmarks, we use [lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval) to do evaluations. You may start with installation of `lmms-eval`. We integrate `cca` in `lmms-eval/lmms_eval/models/llava.py` at line `35-38`.
+```
+pip install -e lmms-eval
+```
+Then, you can simply run scripts below, by replacing `data` with `seed`, `vizwiz_vqa`, `scienceqa_img`, `mmstar` or `gqa`.
 ```
 bash scripts/v1_5/eval/eval.cca-llava-1.5-7b.${data}.sh
 ```
