@@ -16,7 +16,8 @@ This is the official repository of the following paper and a project that study 
 - [2024/09/27] CCA is accepted to NeurIPS 2024🎉.
 
 ## 📖 Introduction
-Recent Large Vision Language Models (LVLMs) present remarkable zero-shot conversational and reasoning capabilities given multimodal queries. Nevertheless, they suffer from object hallucination, a phenomenon where LVLMs are prone to generate textual responses not factually aligned with image inputs. Our pilot study reveals that object hallucination is closely tied with Rotary Position Encoding (RoPE), a widely adopted positional dependency modeling design in existing LVLMs. Due to the long-term decay in RoPE, LVLMs tend to hallucinate more when relevant visual cues are distant from instruction tokens in the multimodal input sequence. Additionally, we observe a similar effect when reversing the sequential order of visual tokens during multimodal alignment. Our tests indicate that long-term decay in RoPE poses challenges to LVLMs while capturing visual-instruction interactions across long distances. We propose Concentric Causal Attention (CCA), a simple yet effective positional alignment strategy that mitigates the impact of RoPE long-term decay in LVLMs by naturally reducing relative distance between visual and instruction tokens. With CCA, visual tokens can better interact with instruction tokens, thereby enhancing model's perception capability and alleviating object hallucination. Without bells and whistles, our positional alignment method surpasses existing hallucination mitigation strategies by large margins on multiple object hallucination benchmarks.
+- We reveal that object hallucination is closely tied with **Rotary Position Encoding** (RoPE), a widely adopted positional dependency modeling design in existing LVLMs. Due to the **long-term decay** in RoPE, LVLMs tend to hallucinate more when relevant visual cues are distant from instruction tokens in the multimodal input sequence.
+- Motivated by this, we propose **Concentric Causal Attention (CCA)**, a simple yet effective positional alignment strategy that mitigates the impact of RoPE long-term decay in LVLMs by naturally reducing relative distance between visual and instruction tokens. 
 <div align="center">
   <img src="images/cca_attn.jpg" alt="Your Image" width="80%" style="float: left; margin-right: 1px;"/>
 </div>
@@ -77,7 +78,9 @@ transformers.models.llama.LlamaModel.forward = cca_forward
 ## ❤️ Acknowledgement
 Thanks for their wonderful work!
 - [LLaVA](https://github.com/haotian-liu/LLaVA): the codebase we use to implement cca.
+- [roformer](https://github.com/ZhuiyiTechnology/roformer): codebase where rope is initially proposed.
 - [OPERA](https://github.com/shikiw/OPERA): an excellent approach that mitigates object hallucination. the codebase we use to implement CHAIR evaluation.
 - [POPE](https://github.com/RUCAIBox/POPE): a widely adopted object hallucination benchmark.
 - [AMBER](https://github.com/junyangwang0410/AMBER): a recent comprehensive hallucination benchmark involving object, attribute and relation hallucination.
 - [lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval): a comprehensive evaluation toolkit on LVLMs. the codebase we use to implement general LVLM benchmark evaluations.
+
