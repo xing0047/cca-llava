@@ -1,13 +1,12 @@
 #!/bin/bash
 
-huggingface_root=/media/drive_16TB/huggingface
 deepspeed llava/train/train_xformers.py \
     --deepspeed ./scripts/zero3.json \
-    --model_name_or_path ${huggingface_root}/lmsys/vicuna-7b-v1.5 \
+    --model_name_or_path lmsys/vicuna-7b-v1.5 \
     --version v1 \
     --data_path ./playground/data/llava_v1_5_mix665k.json \
     --image_folder ./playground/data \
-    --vision_tower ${huggingface_root}/clip-vit-large-patch14-336 \
+    --vision_tower openai/clip-vit-large-patch14-336 \
     --pretrain_mm_mlp_adapter ./checkpoints/pretrain/cca-llava-1.5-7b-558k/mm_projector.bin \
     --mm_projector_type mlp2x_gelu \
     --mm_vision_select_layer -2 \
