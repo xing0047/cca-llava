@@ -52,8 +52,7 @@ playground/
     │   ├── annotations
     │   │   └── instances_val2014.json
     │   └── val2014
-    └── chair
-        └── chair_questions.json
+    └── coco_chair.json
 
 ```
 

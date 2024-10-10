@@ -1,0 +1,9 @@
+bash eval.cca-llava-1.5-7b.pope.coco.adv.sh
+bash eval.cca-llava-1.5-7b.pope.coco.pop.sh
+bash eval.cca-llava-1.5-7b.pope.coco.ran.sh
+bash eval.cca-llava-1.5-7b.pope.gqa.adv.sh
+bash eval.cca-llava-1.5-7b.pope.gqa.pop.sh
+bash eval.cca-llava-1.5-7b.pope.gqa.ran.sh
+bash eval.cca-llava-1.5-7b.pope.aokvqa.adv.sh
+bash eval.cca-llava-1.5-7b.pope.aokvqa.pop.sh
+bash eval.cca-llava-1.5-7b.pope.aokvqa.ran.sh

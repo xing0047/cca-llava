@@ -1,19 +1,16 @@
-
-root=/home/yiheng/code
-llava_root=${root}/cca-llava-github
-img_root=/media/drive_16TB/data/AMBER/image
-annotation_root=/media/drive_16TB/data/coco/annotations_trainval2014
-save_root=${llava_root}/output
-model_root=/media/drive_16TB/huggingface
+amber_root=playground/data/amber
+img_root=${amber_root}/image
+save_root=output/amber
+model_root=liuhaotian
 model=llava-v1.5-7b
 model_name=${model}
 
 echo "------------- Running for model: $model -------------"
 
-question_file_dis=${llava_root}/amber_data/query/query_discriminative.json
+question_file_dis=${amber_root}/query/query_discriminative.json
 answer_file_dis=${save_root}/${model_name}_amber_discriminative_ans.jsonl
 
-question_file_gen=${llava_root}/amber_data/query/query_generative.json
+question_file_gen=${amber_root}/query/query_generative.json
 answer_file_gen=${save_root}/${model_name}_amber_generative_ans.jsonl
 
 echo "------------- AMBER Discriminative Evaluation -------------"
@@ -22,10 +19,10 @@ if test -e ${answer_file_dis}; then
     python llava/eval/eval_amber.py \
         --inference_data ${answer_file_dis} \
         --evaluation_type d \
-        --word_association ${llava_root}/amber_data/relation.json \
-        --safe_words ${llava_root}/amber_data/safe_words.txt \
-        --annotation ${llava_root}/amber_data/annotations.json \
-        --metrics ${llava_root}/amber_data/metrics.txt
+        --word_association ${amber_root}/relation.json \
+        --safe_words ${amber_root}/safe_words.txt \
+        --annotation ${amber_root}/annotations.json \
+        --metrics ${amber_root}/metrics.txt
 else
     python llava/eval/model_vqa_amber.py \
         --model-path ${model_root}/${model} \
@@ -39,10 +36,10 @@ else
     python llava/eval/eval_amber.py \
         --inference_data ${answer_file_dis} \
         --evaluation_type d \
-        --word_association ${llava_root}/amber_data/relation.json \
-        --safe_words ${llava_root}/amber_data/safe_words.txt \
-        --annotation ${llava_root}/amber_data/annotations.json \
-        --metrics ${llava_root}/amber_data/metrics.txt
+        --word_association ${amber_root}/relation.json \
+        --safe_words ${amber_root}/safe_words.txt \
+        --annotation ${amber_root}/annotations.json \
+        --metrics ${amber_root}/metrics.txt
 
 fi
 
@@ -52,10 +49,10 @@ if test -e ${answer_file_gen}; then
     python llava/eval/eval_amber.py \
         --inference_data ${answer_file_gen} \
         --evaluation_type g \
-        --word_association ${llava_root}/amber_data/relation.json \
-        --safe_words ${llava_root}/amber_data/safe_words.txt \
-        --annotation ${llava_root}/amber_data/annotations.json \
-        --metrics ${llava_root}/amber_data/metrics.txt
+        --word_association ${amber_root}/relation.json \
+        --safe_words ${amber_root}/safe_words.txt \
+        --annotation ${amber_root}/annotations.json \
+        --metrics ${amber_root}/metrics.txt
 else
     python llava/eval/model_vqa_amber.py \
         --model-path ${model_root}/${model} \
@@ -68,9 +65,9 @@ else
     python llava/eval/eval_amber.py \
         --inference_data ${answer_file_gen} \
         --evaluation_type g \
-        --word_association ${llava_root}/amber_data/relation.json \
-        --safe_words ${llava_root}/amber_data/safe_words.txt \
-        --annotation ${llava_root}/amber_data/annotations.json \
-        --metrics ${llava_root}/amber_data/metrics.txt
+        --word_association ${amber_root}/relation.json \
+        --safe_words ${amber_root}/safe_words.txt \
+        --annotation ${amber_root}/annotations.json \
+        --metrics ${amber_root}/metrics.txt
 
 fi

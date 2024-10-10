@@ -2,7 +2,7 @@ python3 -m accelerate.commands.launch \
     --num_processes=1 \
     -m lmms_eval \
     --model llava \
-    --model_args pretrained="/home/xingyun/xingy/cca-llava/checkpoints/finetune/cca-llava-1.5-7b",attn_implementation="sdpa" \
+    --model_args pretrained="xing0047/cca-llava-1.5-7b",attn_implementation="sdpa" \
     --tasks mmstar \
     --batch_size 1 \
     --log_samples \

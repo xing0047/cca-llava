@@ -1,14 +1,14 @@
 img_root=playground/data/coco/val2014
 annotation_root=playground/data/coco/annotations
 save_root=outputs/chair
-model_root=/media/drive_16TB/huggingface
+model_root=liuhaotian
 model=llava-v1.5-7b
 model_name=${model}
 
 echo "------------- Running for model: $model -------------"
 
-question_file=/home/yiheng/code/cca-llava-github/chair_question.json
-answer_file=output/${model_name}_chair_coco_ans.jsonl
+question_file=playground/data/coco_chair.jsonl
+answer_file=output/${model_name}_coco_chair_ans.jsonl
 
 if test -e ${answer_file}; then
     python llava/eval/eval_chair.py \
