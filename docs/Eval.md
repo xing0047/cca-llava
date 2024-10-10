@@ -7,7 +7,6 @@ We evaluate models on a diverse set of 8 benchmarks, including `POPE`, `CHAIR`, 
 There are 27,000 questions in total from `COCO`, `GQA` and `A-OKVQA`, each of which comprises three subsets, `random`, `popular`, `adversarial`. For our eval scripts, we put them under folder `playground/data`. 
 ```
 POPE_HOME=/path/to/POPE
-mkdir -p playground/data/pope
 ln -s ${POPE_HOME}/output playground/data/pope
 ```
 Before running any eval script, make sure that `playground` is organised this way,
@@ -24,18 +23,18 @@ playground/
             ├── aokvqa
             └── gqa
 ```
-You can run these evaluations separately, by specifying `data` and `subset`, or run them all with one script.
+You can run pope evaluations separately, by specifying `data` and `subset`, or run them all with one script.
 ```bash
-# run separately, data: coco, gqa, aokvqa, subset: ran, pop, adv
+# run separately, data: coco, gqa, aokvqa, subset: ran, pop, adv.
 bash scripts/v1_5/eval.cca-llava-1.5-7b.pope.${data}.${subset}.sh
 
-# one script for all
+# one script for all.
 bash scripts/v1_5/eval.cca-llava-1.5-7b.pope.sh
 ```
 
 ## CHAIR
 
-We follow [OPERA](https://github.com/shikiw/OPERA) to set up our CHAIR evaluation. An independent conda env is set up for chair evaluation as version for `transformers` differs. 
+We follow [OPERA](https://github.com/shikiw/OPERA) to set up our CHAIR evaluation. An independent conda env is needed for chair evaluation as version for `transformers` differs. 
 
 ```bash
 conda create --name cca-llava-chair --clone cca-llava
@@ -44,7 +43,7 @@ pip uninstall transformers
 pip install transformers==4.29.2
 ```
 
-First, make sure that coco images and annotations are prepared under folder `playground` and organised in this way,
+First, make sure that coco images and annotations are prepared under folder `playground` and organised in this manner,
 ```
 playground/
 └── data
@@ -66,7 +65,7 @@ bash scripts/v1_5/eval/eval.llava-1.5-7b.chair.sh
 ```
 ## AMBER
 
-We follow [AMBER](https://github.com/junyangwang0410/AMBER) to set up our AMBER evaluation. Additional packages need to be installed:
+We follow [AMBER](https://github.com/junyangwang0410/AMBER) to set up the evaluation. Additional packages need to be installed:
 ```bash
 conda create --name cca-llava-amber --clone cca-llava
 conda activate cca-llava-amber
@@ -77,13 +76,13 @@ python -m nltk.downloader all
 pip install spacy
 python -m spacy download en_core_web_lg
 ```
-Note that if any warning or error related to Numpy version shows up, please swicth numpy to 1.x to avoid the compatibility issue. 
+If any warning or error related to Numpy version shows up, please swicth numpy to 1.x to avoid the compatibility issue. 
 ```bash
 pip uninstall numpy
 pip install numpy==1.26.4
 ```
 
-Download AMBER data and questions and organise in the following structure:
+Prepare AMBER data and questions and organise in the following structure:
 ```
 playground/
 └── data
@@ -98,10 +97,10 @@ playground/
         └── image
 ```
 ```bash
-# run evaluation for baseline llava model (include both amber generative and amber discriminative)
+# run evaluation for cca-llava model
 bash scripts/v1_5/eval/eval.cca-llava-1.5-7b.amber.sh
 
-# run evaluation for baseline cca-llava model (include both amber generative and amber discriminative)
+# run evaluation for llava model
 bash scripts/v1_5/eval/eval.llava-1.5-7b.amber.sh
 ```
 
