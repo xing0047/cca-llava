@@ -34,7 +34,7 @@ pip install flash-attn==2.5.8 --no-build-isolation --no-cache-dir
 - [cca-llava-1.5-7b](https://huggingface.co/xing0047/cca-llava-1.5-7b)
 
 ## 📜 Data
-Please refer to [Data.md](https://github.com/xing0047/cca-llava/blob/main/docs/Data.md) for preparation of training and evaluation data.
+Please refer to [Data.md](https://github.com/xing0047/cca-llava/blob/main/docs/Data.md) for preparation of training data.
 
 ## 🔥 Train
 CCA-LLaVA training pipeline follows [LLaVA-1.5](https://github.com/haotian-liu/LLaVA). The training consists of two stages:
