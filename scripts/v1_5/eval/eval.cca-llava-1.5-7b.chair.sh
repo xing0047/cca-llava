@@ -1,9 +1,6 @@
-
-root=/home/xingyun/xingy/cca-llava
-llava_root=${root}/cca-llava
-img_root=/media/drive_16TB/data/coco/val2014
-annotation_root=/media/drive_16TB/data/coco/annotations_trainval2014
-save_root=${llava_root}/outputs/chair
+img_root=playground/data/coco/val2014
+annotation_root=playground/data/coco/annotations
+save_root=outputs/chair
 model_root=/media/drive_16TB/huggingface
 model=cca-llava-1.5-7b
 model_name=${model}
@@ -18,7 +15,7 @@ if test -e ${answer_file}; then
         --cap_file ${answer_file} \
         --image_id_key image_id \
         --caption_key caption \
-        --coco_path  ${annotation_root}
+        --coco_path ${annotation_root}
 else
     python llava/eval/model_vqa_chair.cca.py \
         --model-path ${model_root}/${model} \
@@ -30,6 +27,5 @@ else
         --cap_file ${answer_file} \
         --image_id_key image_id \
         --caption_key caption \
-        --coco_path  ${annotation_root}
-
+        --coco_path ${annotation_root}
 fi

@@ -1,9 +1,6 @@
-
-root=/home/xingyun
-llava_root=${root}/xingy/cca-llava
-img_root=/media/drive_16TB/data/coco/val2014
-save_root=${llava_root}/outputs/pope/aokvqa
-model_root=${llava_root}/checkpoints/finetune
+img_root=playground/data/coco/val2014
+save_root=outputs/pope/aokvqa
+model_root=checkpoints/finetune
 model=cca-llava-1.5-7b
 model_name=${model}
 pope_subset=popular

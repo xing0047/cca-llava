@@ -1,16 +1,13 @@
-
-root=/home/xingyun
-llava_root=${root}/xingy/cca-llava
-img_root=/media/drive_16TB/data/coco/val2014
-save_root=${llava_root}/outputs/pope/aokvqa
-model_root=${llava_root}/checkpoints/finetune
+img_root=playground/data/coco/val2014
+save_root=outputs/pope/aokvqa
+model_root=checkpoints/finetune
 model=cca-llava-1.5-7b
 model_name=${model}
 pope_subset=adversarial
 
 echo "------------- Running for model: $model -------------"
 
-question_file=${llava_root}/playground/data/pope/seem/aokvqa/aokvqa_pope_seem_${pope_subset}.json
+question_file=playground/data/pope/seem/aokvqa/aokvqa_pope_seem_${pope_subset}.json
 answer_file=${save_root}/${model_name}_pope_aokvqa_${pope_subset}.jsonl
 
 if test -e ${answer_file}; then
