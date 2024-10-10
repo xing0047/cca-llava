@@ -67,19 +67,8 @@ bash scripts/v1_5/eval/eval.llava-1.5-7b.chair.sh
 
 We follow [AMBER](https://github.com/junyangwang0410/AMBER) to set up the evaluation. Additional packages need to be installed:
 ```bash
-conda create --name cca-llava-amber --clone cca-llava
-conda activate cca-llava-amber
-
-pip install nltk
 python -m nltk.downloader all
-
-pip install spacy
 python -m spacy download en_core_web_lg
-```
-If any warning or error related to Numpy version shows up, please swicth numpy to 1.x to avoid the compatibility issue. 
-```bash
-pip uninstall numpy
-pip install numpy==1.26.4
 ```
 
 Prepare AMBER data and questions and organise in the following structure:
