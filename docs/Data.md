@@ -1,4 +1,4 @@
-## Pretrain
+## Pretraining
 
 Please download the 558K subset of the LAION-CC-SBU dataset with BLIP captions we use in the paper [here](https://huggingface.co/datasets/liuhaotian/LLaVA-Pretrain). Put the downloaded data under the folder `playground/data`.
 ```
@@ -24,7 +24,7 @@ After downloading all of them, organize the data as follows in `./playground/dat
 ```
 playground/
 └── data
-    └── llava_v1_5_mix665k.json
+    ├── llava_v1_5_mix665k.json
     ├── coco
     │   └── train2017
     ├── gqa
