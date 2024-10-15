@@ -11,8 +11,8 @@ This is the official repository of the following paper and a project that study 
 
 ## 🎉 News
 
-- [2024/10/08] CCA-LLaVA supports evaluation of multiple benchmarks, including `pope`, `chair`, `amber` for hallucination, and `mmstar`, `gqa`, `seed`, `vizwiz_vqa`, `scienceqa` for general LVLM multiple-choice questions. Please refer to [this doc](https://github.com/xing0047/cca-llava/blob/main/docs/Eval.md) for details.
-- [2024/10/08] Paper is available on arXiv.
+- [2024/10/16] CCA-LLaVA supports evaluation of multiple benchmarks, including `pope`, `chair`, `amber` for hallucination, and `mmstar`, `gqa`, `seed`, `vizwiz_vqa`, `scienceqa` for general LVLM multiple-choice questions. Please refer to [this doc](https://github.com/xing0047/cca-llava/blob/main/docs/Eval.md) for details.
+- [2024/10/16] Paper is available on arXiv.
 - [2024/09/27] CCA is accepted to NeurIPS 2024🎉.
 
 ## 📖 Overview
