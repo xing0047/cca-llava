@@ -75,9 +75,6 @@ if __name__ == "__main__":
     parser.add_argument("--question-file", type=str)
     parser.add_argument("--result-file", type=str)
     args = parser.parse_args()
-
-    questions = [json.loads(line) for line in open(args.question_file)]
-    questions = {question['question_id']: question for question in questions}
     answers = [json.loads(q) for q in open(args.result_file, 'r')]
     
     category = args.question_file[10:-5]
