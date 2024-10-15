@@ -1,4 +1,4 @@
-img_root=playground/data/coco/val2014
+img_root=playground/data/gqa/images
 save_root=outputs/pope/gqa
 model_root=xing0047
 model=cca-llava-1.5-7b

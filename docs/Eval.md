@@ -67,6 +67,7 @@ bash scripts/v1_5/eval/eval.llava-1.5-7b.chair.sh
 
 We follow [AMBER](https://github.com/junyangwang0410/AMBER) to set up the evaluation. Additional packages need to be installed:
 ```bash
+pip install nltk==3.9.1 spacy==3.8.2
 python -m nltk.downloader all
 python -m spacy download en_core_web_lg
 ```
