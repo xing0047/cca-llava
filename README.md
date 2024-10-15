@@ -27,7 +27,7 @@ This is the official repository of the following paper and a project that study 
 conda create -n cca-llava python=3.10 -y
 conda activate cca-llava
 pip install --upgrade pip  # enable PEP 660 support
-conda install pytorch==2.1.1 torchvision==0.16.1 pytorch-cuda=12.1 -c pytorch -c nvidia
+pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 --index-url https://download.pytorch.org/whl/cu121
 pip install -e .
 pip install -e ".[train]"
 pip install triton==2.1.0 pynvml==11.5.0 --upgrade
