@@ -1,1 +1,0 @@
-../../../llava-train/llava/eval/eval_posbench.cococrop.grid6x6.py
