@@ -15,7 +15,7 @@ from tqdm import tqdm
 from PIL import Image
 
 import transformers
-from llava.cca_utils.cca_transformers_4_29_2 import llamamodel_forward, llamaforcausallm_forward
+from llava.cca_utils.cca_chair import llamamodel_forward, llamaforcausallm_forward
 transformers.models.llama.LlamaModel.forward = llamamodel_forward
 transformers.models.llama.LlamaForCausalLM.forward = llamaforcausallm_forward
 

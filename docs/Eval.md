@@ -41,9 +41,11 @@ conda create --name cca-llava-chair --clone cca-llava
 conda activate cca-llava-chair
 pip uninstall transformers
 pip install transformers==4.29.2
+pip install nltk==3.9.1
+python -m nltk.downloader all
 ```
 
-First, make sure that coco images and annotations are prepared under folder `playground` and organised in this manner,
+First, make sure that coco images and [annotations](http://images.cocodataset.org/annotations/annotations_trainval2014.zip) are prepared under folder `playground` and organised in this manner,
 ```
 playground/
 └── data
