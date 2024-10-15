@@ -5,7 +5,10 @@ import argparse
 def eval_pope(answers, label_file):
     
     # index {lvis_categories} with 'name'
-    question_list = [json.loads(q) for q in open(label_file, 'r')]
+    if 'coco' in args.question_file:
+        question_list = [json.loads(q) for q in open(os.path.expanduser(args.question_file), "r")]
+    else:
+        question_list = json.load(open(args.question_file))
     question_list = {question['question_id']: question['text'].replace('Is there a ', '').replace('Is there an ', '').replace(' in the image?', '').replace(' in the imange?', '') for question in question_list}
 
     # todo valid question ids
