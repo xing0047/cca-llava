@@ -7,7 +7,7 @@ pope_subset=adversarial
 
 echo "------------- Running for model: $model -------------"
 
-question_file=${llava_root}/playground/data/pope/coco/coco_pope_${pope_subset}.json
+question_file=playground/data/pope/coco/coco_pope_${pope_subset}.json
 answer_file=${save_root}/${model_name}_pope_coco_${pope_subset}.jsonl
 
 if test -e ${answer_file}; then

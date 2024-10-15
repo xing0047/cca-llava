@@ -7,7 +7,7 @@ pope_subset=random
 
 echo "------------- Running for model: $model -------------"
 
-question_file=${llava_root}/playground/data/pope/seem/gqa/gqa_pope_seem_${pope_subset}.json
+question_file=playground/data/pope/seem/gqa/gqa_pope_seem_${pope_subset}.json
 answer_file=${save_root}/${model_name}_pope_gqa_${pope_subset}.jsonl
 
 if test -e ${answer_file}; then
