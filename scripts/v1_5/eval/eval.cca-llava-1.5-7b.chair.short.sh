@@ -1,14 +1,14 @@
 img_root=playground/data/coco/val2014
 annotation_root=playground/data/coco/annotations
 save_root=outputs/chair
-model_root=liuhaotian
-model=llava-v1.5-7b
+model_root=xing0047
+model=cca-llava-1.5-7b
 model_name=${model}
 
 echo "------------- Running for model: $model -------------"
 
 question_file=playground/data/coco_chair.jsonl
-answer_file=output/${model_name}_coco_chair_ans.jsonl
+answer_file=output/${model_name}_coco_chair_short_ans.jsonl
 
 if test -e ${answer_file}; then
     python llava/eval/eval_chair.py \
@@ -17,7 +17,7 @@ if test -e ${answer_file}; then
         --caption_key caption \
         --coco_path ${annotation_root}
 else
-    python llava/eval/model_vqa_chair.py \
+    python llava/eval/model_vqa_chair.cca.py \
         --model-path ${model_root}/${model} \
         --question-file ${question_file} \
         --image-folder ${img_root} \
@@ -27,5 +27,5 @@ else
         --cap_file ${answer_file} \
         --image_id_key image_id \
         --caption_key caption \
-        --coco_path  ${annotation_root}
+        --coco_path ${annotation_root}
 fi

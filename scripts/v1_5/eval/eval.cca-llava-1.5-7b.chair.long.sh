@@ -8,7 +8,7 @@ model_name=${model}
 echo "------------- Running for model: $model -------------"
 
 question_file=playground/data/coco_chair.jsonl
-answer_file=output/${model_name}_coco_chair_ans.jsonl
+answer_file=output/${model_name}_coco_chair_long_ans.jsonl
 
 if test -e ${answer_file}; then
     python llava/eval/eval_chair.py \
@@ -21,7 +21,7 @@ else
         --model-path ${model_root}/${model} \
         --question-file ${question_file} \
         --image-folder ${img_root} \
-        --max_new_tokens 64 \
+        --max_new_tokens 512 \
         --answers-file ${answer_file}
     python llava/eval/eval_chair.py \
         --cap_file ${answer_file} \
