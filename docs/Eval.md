@@ -60,10 +60,12 @@ playground/
 To do chair evaluation, simply run
 ```bash
 # cca-llava evaluation
-bash scripts/v1_5/eval/eval.cca-llava-1.5-7b.chair.sh
+bash scripts/v1_5/eval/eval.cca-llava-1.5-7b.chair.short.sh
+bash scripts/v1_5/eval/eval.cca-llava-1.5-7b.chair.long.sh
 
 # llava-v1.5-7b baseline evaluation
-bash scripts/v1_5/eval/eval.llava-1.5-7b.chair.sh
+bash scripts/v1_5/eval/eval.llava-1.5-7b.chair.short.sh
+bash scripts/v1_5/eval/eval.llava-1.5-7b.chair.long.sh
 ```
 ## AMBER
 
