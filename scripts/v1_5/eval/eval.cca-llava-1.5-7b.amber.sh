@@ -1,6 +1,6 @@
 amber_root=playground/data/amber
 img_root=${amber_root}/image
-save_root=output/amber
+save_root=outputs/amber
 model_root=xing0047
 model=cca-llava-1.5-7b
 model_name=${model}
