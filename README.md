@@ -16,8 +16,8 @@ This is the official repository of the following paper and a project that study 
 - [2024/09/27] CCA is accepted to NeurIPS 2024🎉.
 
 ## 📖 Overview
-- We reveal that **object hallucination** is closely tied with **Rotary Position Encoding** (RoPE), a widely adopted positional dependency modeling design in existing LVLMs. Due to the **long-term decay** in RoPE, LVLMs tend to hallucinate more when relevant visual cues are distant from instruction tokens (user query) in the multimodal input sequence.
-- Motivated by this, we propose **Concentric Causal Attention (CCA)**, a simple yet effective positional alignment strategy that mitigates the impact of RoPE long-term decay in LVLMs by naturally reducing relative distance between visual and instruction tokens. 
+- We reveal that **object hallucination** is closely tied with **Rotary Position Encoding** (RoPE), a widely adopted positional dependency modeling design in existing LVLMs. Due to the **long-term decay** in RoPE, LVLMs suffer from **recency bias** andtend to hallucinate more when relevant visual cues are distant from instruction tokens (user query) in the multimodal input sequence.
+- Motivated by this, we propose **Concentric Causal Attention (CCA)**, a simple yet effective positional alignment strategy that mitigates the impact of RoPE long-term decay in LVLMs by placing critical cues closer to user instructions, thereby alleviating object hallucinations. 
 <div align="center">
   <img src="images/cca_attn.jpg" alt="Your Image" width="80%" style="float: left; margin-right: 1px;"/>
 </div>
