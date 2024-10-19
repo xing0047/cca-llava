@@ -76,7 +76,7 @@ python -m nltk.downloader all
 python -m spacy download en_core_web_lg
 ```
 
-Prepare AMBER data and questions and organise in the following structure:
+Prepare AMBER images and make sure that data is organised in the following structure:
 ```
 playground/
 └── data
