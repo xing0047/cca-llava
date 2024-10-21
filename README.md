@@ -24,7 +24,7 @@ This is the official repository of the following paper and a project that study 
 
 ## 🔥 Spatial Position Probing
 
-- To further verify effectiveness of our approach, we craft a large-scale object hallucination evaluation set, involving 2,000,000 testing samples that are diverse in object spatial positions and object sizes. Our model surpasses LLaVA-1.5 across diverse spatial positions and object scales consistently.
+- To further verify effectiveness of our approach, we craft a large-scale object hallucination evaluation set, involving over 2,000,000 testing samples that are diverse in object spatial positions and object sizes. Our model surpasses LLaVA-1.5 across diverse spatial positions and object scales consistently.
 <div align="center">
   <img src="images/spatial_position_probing.png" alt="Your Image" width="95%" style="float: left; margin-right: 1px;"/>
 </div>
