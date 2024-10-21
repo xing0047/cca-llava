@@ -24,7 +24,7 @@ This is the official repository of the following paper and a project that study 
 
 ## 🔥 Spatial Position Probing
 
-- For the first time, we craft a very large-scale object hallucination evaluation setup which is diverse in object spatial positions and object sizes. 
+- To further verify effectiveness of our approach, we craft a very large-scale object hallucination evaluation setup which is charactarized by diversity in object spatial positions and object sizes. 
 <div align="center">
   <img src="images/spatial_position_probing.png" alt="Your Image" width="95%" style="float: left; margin-right: 1px;"/>
 </div>
