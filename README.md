@@ -47,7 +47,7 @@ pip install flash-attn==2.5.8 --no-build-isolation --no-cache-dir
 ## 📜 Data
 Please refer to [Data.md](https://github.com/xing0047/cca-llava/blob/main/docs/Data.md) for preparation of training data.
 
-## 🔥 Train
+## 🌟 Train
 CCA-LLaVA training pipeline follows [LLaVA-1.5](https://github.com/haotian-liu/LLaVA). The training consists of two stages:
 - **Step 1, pretraining**. Train a projector on a CC3M subset of ∼558K image-text pairs to connect a frozen pretrained vision encoder and a frozen LLM.
   ```
