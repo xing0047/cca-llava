@@ -7,8 +7,9 @@ model_name=${model}
 
 echo "------------- Running for model: $model -------------"
 
+mkdir -p outputs/chair
 question_file=playground/data/coco_chair.jsonl
-answer_file=outputs/${model_name}_coco_chair_short_ans.jsonl
+answer_file=outputs/chair/${model_name}_coco_chair_short_ans.jsonl
 
 if test -e ${answer_file}; then
     python llava/eval/eval_chair.py \
