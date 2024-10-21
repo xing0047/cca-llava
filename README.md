@@ -22,7 +22,7 @@ This is the official repository of the following paper and a project that study 
   <img src="images/cca_attn.jpg" alt="Your Image" width="70%" style="float: left; margin-right: 1px;"/>
 </div>
 
-## 🔍 Spatial Position Probing
+## 🔥 Spatial Position Probing
 
 - Motivated by this, we propose **Concentric Causal Attention (CCA)**, a simple yet effective positional alignment strategy that mitigates the impact of RoPE long-term decay in LVLMs by placing critical visual cues closer to user instructions, thereby alleviating object hallucinations. 
 <div align="center">
