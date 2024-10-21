@@ -28,5 +28,5 @@ else
         --cap_file ${answer_file} \
         --image_id_key image_id \
         --caption_key caption \
-        --coco_path  ${annotation_root}
+        --coco_path ${annotation_root}
 fi
