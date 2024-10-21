@@ -23,7 +23,7 @@ This is the official repository of the following paper and a project that study 
 
 - Motivated by this, we propose **Concentric Causal Attention (CCA)**, a simple yet effective positional alignment strategy that mitigates the impact of RoPE long-term decay in LVLMs by placing critical visual cues closer to user instructions, thereby alleviating object hallucinations. 
 <div align="center">
-  <img src="images/spatial_position_probing.png" alt="Your Image" width="100%" style="float: left; margin-right: 1px;"/>
+  <img src="images/spatial_position_probing.png" alt="Your Image" width="95%" style="float: left; margin-right: 1px;"/>
 </div>
 
 ## 🛠️ Install
