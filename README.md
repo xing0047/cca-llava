@@ -7,7 +7,7 @@
 This is the official repository of the following paper and a project that study positional perception in LVLMs.
 > **Mitigating Object Hallucination via Concentric Causal Attention**<br>
 > NeurIPS 2024<br>
-> Yun Xing*, Yiheng Li*, Ivan Laptev, Shijian Lu<br>
+> Yun Xing*, Yiheng Li*, Ivan Laptev, Shijian Lu†<br>
 
 ## 🎉 News
 
