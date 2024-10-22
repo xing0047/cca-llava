@@ -5,7 +5,7 @@
 # Mitigating Object Hallucination via Concentric Causal Attention
 
 This is the official repository of the following paper and a project that study positional perception in LVLMs.
-> **[Mitigating Object Hallucination via Concentric Causal Attention](https://github.com/xing0047/cca-llava/blob/main/docs/neurips24_cca.pdf)**<br>
+> **[Mitigating Object Hallucination via Concentric Causal Attention](https://arxiv.org/abs/2410.15926)**<br>
 > NeurIPS 2024<br>
 > Yun Xing*, Yiheng Li*, Ivan Laptev, Shijian Lu†<br>
 
