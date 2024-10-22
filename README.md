@@ -11,8 +11,8 @@ This is the official repository of the following paper and a project that study 
 
 ## 🎉 News
 
+- [2024/10/22] [Paper](https://arxiv.org/abs/2410.15926) is available on arXiv.
 - [2024/10/21] CCA-LLaVA supports evaluation of multiple benchmarks, including `pope`, `chair`, `amber` for hallucination, and `mmstar`, `gqa`, `seed`, `vizwiz_vqa`, `scienceqa` for general LVLM multiple-choice questions. Please refer to [this doc](https://github.com/xing0047/cca-llava/blob/main/docs/Eval.md) for details.
-- [2024/10/21] [Paper](https://github.com/xing0047/cca-llava/blob/main/docs/neurips24_cca.pdf) is available.
 - [2024/09/27] CCA is accepted to NeurIPS 2024🎉.
 
 ## 🕹️ Approach
@@ -72,13 +72,15 @@ transformers.models.llama.LlamaModel.forward = cca_forward
 
 ## ✒️ Citation
 ```
-@inproceedings{
-  xing2024mitigating,
-  title={Mitigating Object Hallucination via Concentric Causal Attention},
-  author={Yun Xing, Yiheng Li, Ivan Laptev, Shijian Lu},
-  booktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},
+@misc{
+  xing2024mitigatingobjecthallucinationconcentric,
+  title={Mitigating Object Hallucination via Concentric Causal Attention}, 
+  author={Yun Xing and Yiheng Li and Ivan Laptev and Shijian Lu},
   year={2024},
-  url={https://openreview.net/forum?id=CIRPE1bSmV}
+  eprint={2410.15926},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2410.15926}, 
 }
 ```
 
