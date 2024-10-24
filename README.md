@@ -72,15 +72,11 @@ transformers.models.llama.LlamaModel.forward = cca_forward
 
 ## ✒️ Citation
 ```
-@misc{
-  xing2024mitigatingobjecthallucinationconcentric,
-  title={Mitigating Object Hallucination via Concentric Causal Attention}, 
-  author={Yun Xing and Yiheng Li and Ivan Laptev and Shijian Lu},
-  year={2024},
-  eprint={2410.15926},
-  archivePrefix={arXiv},
-  primaryClass={cs.CV},
-  url={https://arxiv.org/abs/2410.15926}, 
+@article{xing2024mitigating,
+  title={Mitigating Object Hallucination via Concentric Causal Attention},
+  author={Xing, Yun and Li, Yiheng and Laptev, Ivan and Lu, Shijian},
+  journal={arXiv preprint arXiv:2410.15926},
+  year={2024}
 }
 ```
 
