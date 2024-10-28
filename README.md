@@ -3,6 +3,7 @@
 </div>
 
 # Mitigating Object Hallucination via Concentric Causal Attention
+[![arXiv](https://img.shields.io/badge/Arxiv-2410.15926-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2410.15926) <a href="https://huggingface.co/papers/2410.15926"></a> <a href='https://huggingface.co/xing0047/cca-llava-1.5-7b'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'></a>
 
 This is the official repository of the following paper and a project that study positional perception in LVLMs.
 > **[Mitigating Object Hallucination via Concentric Causal Attention](https://arxiv.org/abs/2410.15926)**<br>
@@ -10,6 +11,7 @@ This is the official repository of the following paper and a project that study 
 > Yun Xing*, Yiheng Li*, Ivan Laptev, Shijian Lu†<br>
 
 ## 🎉 News
+<h5 align="center"> We will include more findings in coming weeks. Stay tuned if you are interested. </h2>
 
 - [2024/10/22] [Paper](https://arxiv.org/abs/2410.15926) is available on arXiv.
 - [2024/10/21] CCA-LLaVA supports evaluation of multiple benchmarks, including `pope`, `chair`, `amber` for hallucination, and `mmstar`, `gqa`, `seed`, `vizwiz_vqa`, `scienceqa` for general LVLM multiple-choice questions. Please refer to [this doc](https://github.com/xing0047/cca-llava/blob/main/docs/Eval.md) for details.
