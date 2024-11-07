@@ -353,16 +353,19 @@ def cca_forward(
             ).to(self.dtype)
         # set causal mask according to cca posistions.
         for (b_idx, img_token_pos), cca_position_ids in zip(enumerate(batch_img_token_pos), batch_cca_position_ids):
-            cca_attention_mask[
-                b_idx, 
-                :, 
-                img_token_pos: img_token_pos + IMG_TOKEN_LEN, img_token_pos: img_token_pos + IMG_TOKEN_LEN
-            ] = float('-inf') * torch.ones((IMG_TOKEN_LEN, IMG_TOKEN_LEN), device=self.device)
-            for pos in torch.arange(img_token_pos, img_token_pos + H // 2):
-                k_pos = torch.nonzero((cca_position_ids <= pos) * (cca_position_ids >= img_token_pos))[:, 0]
-                q_pos = torch.nonzero((cca_position_ids == pos) * (cca_position_ids >= img_token_pos))[:, 0]
-                m_pos = torch.cartesian_prod(q_pos, k_pos)
-                cca_attention_mask[b_idx, 0, m_pos[:, 0], m_pos[:, 1]] = 0.
+            if img_token_pos == -1:
+                pass
+            else:
+                cca_attention_mask[
+                    b_idx, 
+                    :, 
+                    img_token_pos: img_token_pos + IMG_TOKEN_LEN, img_token_pos: img_token_pos + IMG_TOKEN_LEN
+                ] = float('-inf') * torch.ones((IMG_TOKEN_LEN, IMG_TOKEN_LEN), device=self.device)
+                for pos in torch.arange(img_token_pos, img_token_pos + H // 2):
+                    k_pos = torch.nonzero((cca_position_ids <= pos) * (cca_position_ids >= img_token_pos))[:, 0]
+                    q_pos = torch.nonzero((cca_position_ids == pos) * (cca_position_ids >= img_token_pos))[:, 0]
+                    m_pos = torch.cartesian_prod(q_pos, k_pos)
+                    cca_attention_mask[b_idx, 0, m_pos[:, 0], m_pos[:, 1]] = 0.
     
     # embed positions
     hidden_states = inputs_embeds
