@@ -27,8 +27,6 @@ from llava.constants import IMAGE_TOKEN_INDEX
 
 from ..llava_arch import LlavaMetaModel, LlavaMetaForCausalLM
 
-### TODO REMOVE PDB ###
-import pdb
 
 class LlavaConfig(LlamaConfig):
     model_type = "llava_llama"
@@ -50,7 +48,8 @@ class LlavaLlamaForCausalLM(LlamaForCausalLM, LlavaMetaForCausalLM):
         self.pretraining_tp = config.pretraining_tp
         self.vocab_size = config.vocab_size
         self.lm_head = nn.Linear(config.hidden_size, config.vocab_size, bias=False)
-        self.text_image_attn=None
+        # visualisation
+        self.text_image_if = None
         # Initialize weights and apply final processing
         self.post_init()
 
@@ -75,7 +74,7 @@ class LlavaLlamaForCausalLM(LlamaForCausalLM, LlavaMetaForCausalLM):
     ) -> Union[Tuple, CausalLMOutputWithPast]:
         if self.training:
             if inputs_embeds is None:
-                # ! img_start position
+                # where visual tokens start
                 batch_img_token_pos = torch.where(input_ids == IMAGE_TOKEN_INDEX)[1]
                 if len(batch_img_token_pos) == 0:  # this happens when no image in input_ids.
                     batch_img_token_pos = torch.Tensor([-1] * input_ids.shape[0]).to(batch_img_token_pos.device).to(batch_img_token_pos.dtype)
@@ -101,7 +100,7 @@ class LlavaLlamaForCausalLM(LlamaForCausalLM, LlavaMetaForCausalLM):
                 position_ids=position_ids,
                 past_key_values=past_key_values,
                 inputs_embeds=inputs_embeds,
-                batch_img_token_pos=batch_img_token_pos,  # ! img_start position
+                batch_img_token_pos=batch_img_token_pos,  # where visual tokens start
                 labels=labels,
                 use_cache=use_cache,
                 output_attentions=output_attentions,
@@ -132,7 +131,7 @@ class LlavaLlamaForCausalLM(LlamaForCausalLM, LlavaMetaForCausalLM):
                 position_ids=position_ids,
                 past_key_values=past_key_values,
                 inputs_embeds=inputs_embeds,
-                batch_img_token_pos=batch_img_token_pos,  # ! img_start position
+                batch_img_token_pos=batch_img_token_pos,  # where visual tokens start
                 labels=labels,
                 use_cache=use_cache,
                 output_attentions=output_attentions,
@@ -154,7 +153,7 @@ class LlavaLlamaForCausalLM(LlamaForCausalLM, LlavaMetaForCausalLM):
         if "inputs_embeds" in kwargs:
             raise NotImplementedError("`inputs_embeds` is not supported")
         
-        # ! img_start position
+        # where visual tokens start
         batch_img_token_pos = torch.where(inputs == IMAGE_TOKEN_INDEX)[1]
         if len(batch_img_token_pos) == 0:  # this happens when no image in input_ids.
             batch_img_token_pos = torch.Tensor([-1] * inputs.shape[0]).to(batch_img_token_pos.device).to(batch_img_token_pos.dtype)
@@ -182,15 +181,15 @@ class LlavaLlamaForCausalLM(LlamaForCausalLM, LlavaMetaForCausalLM):
             position_ids=position_ids,
             attention_mask=attention_mask,
             inputs_embeds=inputs_embeds, 
-            batch_img_token_pos=batch_img_token_pos,  # ! img_start position
+            batch_img_token_pos=batch_img_token_pos,  # where visual tokens start
             **kwargs
-        ), self.text_image_attn
+        ), self.text_image_if
 
     def prepare_inputs_for_generation(self, input_ids, past_key_values=None,
                                       inputs_embeds=None, **kwargs):
         images = kwargs.pop("images", None)
         image_sizes = kwargs.pop("image_sizes", None)
-        batch_img_token_pos = kwargs.pop("batch_img_token_pos", None)  # ! img_start position
+        batch_img_token_pos = kwargs.pop("batch_img_token_pos", None)  # where visual tokens start
         inputs = super().prepare_inputs_for_generation(
             input_ids, past_key_values=past_key_values, inputs_embeds=inputs_embeds, **kwargs
         )
@@ -198,10 +197,9 @@ class LlavaLlamaForCausalLM(LlamaForCausalLM, LlavaMetaForCausalLM):
             inputs['images'] = images
         if image_sizes is not None:
             inputs['image_sizes'] = image_sizes
-        # ! img_start position
+        # where visual tokens start
         if batch_img_token_pos is not None:
             inputs['batch_img_token_pos'] = batch_img_token_pos
-
         return inputs
 
 AutoConfig.register("llava_llama", LlavaConfig)
