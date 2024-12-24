@@ -54,6 +54,9 @@ class LlavaLlamaForCausalLM(LlamaForCausalLM, LlavaMetaForCausalLM):
         # Initialize weights and apply final processing
         self.post_init()
 
+        # save visual tensor
+        self.image_file = None
+
     def get_model(self):
         return self.model
 

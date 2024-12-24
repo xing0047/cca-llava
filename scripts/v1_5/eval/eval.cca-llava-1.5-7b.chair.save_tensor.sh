@@ -1,0 +1,35 @@
+img_root=playground/data/coco/val2014
+annotation_root=playground/data/coco/annotations
+save_root=outputs/chair
+model_root=xing0047
+model=cca-llava-1.5-7b
+model_name=${model}
+
+echo "------------- Running for model: $model -------------"
+
+mkdir -p outputs/chair
+question_file=playground/data/coco_chair.jsonl
+answer_file=outputs/chair/${model_name}_coco_chair_short_ans_4.jsonl
+
+save_visual_tensor_path=visual_tensor_for_chair
+
+if test -e ${answer_file}; then
+    python llava/eval/eval_chair.py \
+        --cap_file ${answer_file} \
+        --image_id_key image_id \
+        --caption_key caption \
+        --coco_path ${annotation_root}
+else
+    python llava/eval/model_vqa_chair.cca.save_tensor.py \
+        --model-path ${model_root}/${model} \
+        --question-file ${question_file} \
+        --image-folder ${img_root} \
+        --max_new_tokens 64 \
+        --answers-file ${answer_file} \
+        --save_path ${save_visual_tensor_path}
+    python llava/eval/eval_chair.py \
+        --cap_file ${answer_file} \
+        --image_id_key image_id \
+        --caption_key caption \
+        --coco_path ${annotation_root}
+fi
