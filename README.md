@@ -14,6 +14,7 @@ Mitigating Object Hallucination via Concentric Causal Attention</a></h3>
 ## 🎉 News
 
 - [2024/11/07] Information Flow visualization is available.
+- [2024/11/02] [Spatial Position Probing](https://huggingface.co/datasets/xing0047/SPP) is available on huggingface.
 - [2024/10/22] [Paper](https://arxiv.org/abs/2410.15926) is available on arXiv.
 - [2024/10/21] CCA-LLaVA supports evaluation of multiple benchmarks, including `pope`, `chair`, `amber` for hallucination, and `mmstar`, `gqa`, `seed`, `vizwiz_vqa`, `scienceqa` for general LVLM multiple-choice questions. Please refer to [this doc](https://github.com/xing0047/cca-llava/blob/main/docs/Eval.md) for details.
 - [2024/09/27] CCA is accepted to NeurIPS 2024🎉.
