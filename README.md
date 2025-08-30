@@ -7,7 +7,7 @@ Mitigating Object Hallucination via Concentric Causal Attention</a></h3>
 <h5 align="center"> If our project helps you, please give us a star ⭐ on GitHub to support us. 🙏🙏 </h2>
 
 <h5 align="center">
-[![arXiv](https://img.shields.io/badge/Arxiv-2410.15926-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2410.15926) <a href="https://huggingface.co/papers/2410.15926"></a> <a href='https://huggingface.co/xing0047/cca-llava-1.5-7b'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'></a> <a href="https://huggingface.co/papers/2410.15926"></a> <a href='https://huggingface.co/datasets/xing0047/SPP'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spatial Position Probing-green'></a></h2>
+[![arXiv](https://img.shields.io/badge/Arxiv-2410.15926-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2410.15926) <a href="https://huggingface.co/papers/2410.15926"></a> <a href='https://huggingface.co/xing0047/cca-llava-1.5-7b'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'></a> <a href="https://huggingface.co/papers/2410.15926"></a> <a href='https://huggingface.co/datasets/xing0047/SPP'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spatial Position Probing-green'></a><br>
 
 This is the official repository of the following paper and a project that study positional perception in LVLMs.
 > **[Mitigating Object Hallucination via Concentric Causal Attention](https://arxiv.org/abs/2410.15926)**<br>
