@@ -5,8 +5,8 @@
 <h3 align="center"><a href="https://arxiv.org/abs/2410.15926" style="color:#9C276A">
 Mitigating Object Hallucination via Concentric Causal Attention</a></h3>
 
-<h3 align="center">
-Yun Xing*, Yiheng Li*, Ivan Laptev, Shijian Lu†</h3>
+<h5 align="center">
+Yun Xing*, Yiheng Li*, Ivan Laptev, Shijian Lu†</h5>
 
 <h5 align="center"> If our project helps you, please give us a star ⭐ on GitHub to support us. 🙏🙏 </h2>
 
