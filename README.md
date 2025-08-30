@@ -3,7 +3,14 @@
 </div>
 
 # Mitigating Object Hallucination via Concentric Causal Attention
+
+<h3 align="center"><a href="https://arxiv.org/abs/2410.15926" style="color:#9C276A">
+Mitigating Object Hallucination via Concentric Causal Attention</a></h3>
+<h5 align="center"> If our project helps you, please give us a star ⭐ on GitHub to support us. 🙏🙏 </h2>
+
+<h5 align="center">
 [![arXiv](https://img.shields.io/badge/Arxiv-2410.15926-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2410.15926) <a href="https://huggingface.co/papers/2410.15926"></a> <a href='https://huggingface.co/xing0047/cca-llava-1.5-7b'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'></a> <a href="https://huggingface.co/papers/2410.15926"></a> <a href='https://huggingface.co/datasets/xing0047/SPP'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spatial Position Probing-green'></a>
+<br>
 
 This is the official repository of the following paper and a project that study positional perception in LVLMs.
 > **[Mitigating Object Hallucination via Concentric Causal Attention](https://arxiv.org/abs/2410.15926)**<br>
@@ -11,8 +18,8 @@ This is the official repository of the following paper and a project that study 
 > Yun Xing*, Yiheng Li*, Ivan Laptev, Shijian Lu†<br>
 
 ## 🎉 News
-<h5 align="center"> We will include more findings in coming weeks. Stay tuned if you are interested. 🙏🙏 </h2>
 
+- [2024/11/07] Information Flow visualization is available.
 - [2024/10/22] [Paper](https://arxiv.org/abs/2410.15926) is available on arXiv.
 - [2024/10/21] CCA-LLaVA supports evaluation of multiple benchmarks, including `pope`, `chair`, `amber` for hallucination, and `mmstar`, `gqa`, `seed`, `vizwiz_vqa`, `scienceqa` for general LVLM multiple-choice questions. Please refer to [this doc](https://github.com/xing0047/cca-llava/blob/main/docs/Eval.md) for details.
 - [2024/09/27] CCA is accepted to NeurIPS 2024🎉.
@@ -84,10 +91,10 @@ transformers.models.llama.LlamaModel.forward = cca_forward
 
 ## ❤️ Acknowledgement
 Thanks for their wonderful work!
-- [LLaVA](https://github.com/haotian-liu/LLaVA): the codebase we use to implement cca.
+- [llava](https://github.com/haotian-liu/LLaVA): the codebase we use to implement cca.
 - [roformer](https://github.com/ZhuiyiTechnology/roformer): codebase where rope is initially proposed.
-- [OPERA](https://github.com/shikiw/OPERA): an excellent approach that mitigates object hallucination. the codebase we use to implement CHAIR evaluation.
-- [POPE](https://github.com/RUCAIBox/POPE): a widely adopted object hallucination benchmark.
-- [AMBER](https://github.com/junyangwang0410/AMBER): a recent comprehensive hallucination benchmark involving object, attribute and relation hallucination.
+- [opera](https://github.com/shikiw/OPERA): an excellent approach that mitigates object hallucination. the codebase we use to implement CHAIR evaluation.
+- [pope](https://github.com/RUCAIBox/POPE): a widely adopted object hallucination benchmark.
+- [amber](https://github.com/junyangwang0410/AMBER): a recent comprehensive hallucination benchmark involving object, attribute and relation hallucination.
 - [lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval): a comprehensive evaluation toolkit on LVLMs. the codebase we use to implement general LVLM benchmark evaluations.
 
